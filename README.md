@@ -18,6 +18,6 @@ This project was meant to be used with [this](https://github.com/RichardVirgosky
     - square vs heart
     - autooff (turns off when at 0) vs non-autooff (stays on at 0 so you can look like you're dead)
 - Place it somewhere on the avatar that you want it and adjust it's position/rotation as needed.
-- Add the `heartrate_monitor_menu_toggle` prefab anywhere on the avatar to add a toggle to the menu for it **(this consumers 1 synced bit, make sure you have space)**
+- Add the `heartrate_monitor_menu_toggle` prefab anywhere on the avatar to add a toggle to the menu for it if you want it. By default it is placed at the root of your menu, but you can edit's menu location by editing `prefix` in the VRCFury script in the prefab. **(this consumes 1 synced bit, make sure you have space)**
 - Upload the avatar, VRCFury will merge all animations and parameters.
 - **Make sure you have OSC enabled in the ingame Radial Menu**
