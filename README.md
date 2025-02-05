@@ -12,7 +12,7 @@ This project was meant to be used with [this](https://github.com/RichardVirgosky
 - Install VRCFury using the VRC Creator Companion or Unity Package
 - Install [Poiyomi shaders](https://github.com/poiyomi/PoiyomiToonShader/releases), or use the bundled ones... Which are probably horrifically out of date. 
 - Make sure your avatar has at least 8 synced bits free in its parameters
-- Install the unity package for this project (found in the releases page) or by clicking [here](https://github.com/32294/VRChat_Heart_Rate_Monitor_Prefab_Quest_Compatible/releases/download/1.1.0/heartrate_monitor.unitypackage) 
+- Install the unity package for this project (found in the releases page) or by clicking [here](https://github.com/32294/VRChat_Heart_Rate_Monitor_Prefab_Quest_Compatible/releases/download/1.1.1/heartrate_monitor.unitypackage) 
 - Chose an appropriate prefab from the prefabs folder that best fits your needs
     - `prefabs/poiyomi` for PC and `prefabs/mobile` for quest 
     - square vs heart

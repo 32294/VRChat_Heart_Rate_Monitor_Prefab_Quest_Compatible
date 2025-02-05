@@ -10,7 +10,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: heartRate
-    m_EventTreshold: 0.158
+    m_EventTreshold: 0.023
   - m_ConditionMode: 4
     m_ConditionEvent: heartRate
     m_EventTreshold: 0.992126
@@ -69,7 +69,7 @@ AnimatorStateTransition:
     m_EventTreshold: -0.134
   - m_ConditionMode: 4
     m_ConditionEvent: heartRate
-    m_EventTreshold: 0.158
+    m_EventTreshold: 0.02362204
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 190158857273515219}
   m_Solo: 0
@@ -94,7 +94,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: heartRate
-    m_EventTreshold: 0.158
+    m_EventTreshold: 0.023
   - m_ConditionMode: 4
     m_ConditionEvent: heartRate
     m_EventTreshold: 0.174
@@ -370,13 +370,13 @@ AnimatorController:
     m_DefaultFloat: -1
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: heartRateToggle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: heart_rate_monitor_color
@@ -453,7 +453,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: heartRate
-    m_EventTreshold: 0.158
+    m_EventTreshold: 0.02362204
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6616103773603938294}
   m_Solo: 0

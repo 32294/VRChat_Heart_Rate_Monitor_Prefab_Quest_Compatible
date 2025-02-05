@@ -436,7 +436,7 @@ MonoBehaviour:
   - Hand
   allowSelf: 1
   allowOthers: 0
-  localOnly: 0
+  localOnly: 1
   receiverType: 0
   parameter: heartRate
   minVelocity: 0.05
