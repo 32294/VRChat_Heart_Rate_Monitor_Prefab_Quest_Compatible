@@ -23,7 +23,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 100
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -33,7 +33,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.gray_off
+    attribute: blendShape.orange_off
     path: 
     classID: 137
     script: {fileID: 0}
@@ -54,7 +54,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.red_off
+    attribute: blendShape.gray_off
     path: 
     classID: 137
     script: {fileID: 0}
@@ -69,7 +69,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 3020059181
+      attribute: 3645577023
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -78,7 +78,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 2508442301
+      attribute: 3020059181
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -113,7 +113,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 100
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -123,7 +123,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.gray_off
+    attribute: blendShape.orange_off
     path: 
     classID: 137
     script: {fileID: 0}
@@ -144,7 +144,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.red_off
+    attribute: blendShape.gray_off
     path: 
     classID: 137
     script: {fileID: 0}
