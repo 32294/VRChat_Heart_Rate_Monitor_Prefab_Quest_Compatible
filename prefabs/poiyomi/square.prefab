@@ -311,7 +311,7 @@ Animator:
   m_GameObject: {fileID: 2212516427515706612}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06b5239c9adfe5f489eb823bda0a78c6, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1151.0
+  vrcfuryVersion: 1.1173.0
   somethingIsBroken: 0
   config:
     features: []
@@ -381,7 +381,7 @@ MonoBehaviour:
             objRef: {fileID: 11400000, guid: de988bc2e4796ff44b9b2690acea6365, type: 2}
         smoothedPrms: []
         globalParams:
-        - heartRate
+        - '*'
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2212516427515706612}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1450912254, guid: 80f1b8067b0760e4bb45023bc2e9de66, type: 3}
   m_Name: 
