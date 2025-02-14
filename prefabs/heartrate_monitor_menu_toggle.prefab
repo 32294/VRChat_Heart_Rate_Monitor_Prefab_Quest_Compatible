@@ -76,7 +76,8 @@ MonoBehaviour:
             id: d0352998690d20a4d8cd908a7786b655|Assets/32294/heartrate_monitor/animations/params_toggle.asset
             objRef: {fileID: 11400000, guid: d0352998690d20a4d8cd908a7786b655, type: 2}
         smoothedPrms: []
-        globalParams: []
+        globalParams:
+        - '*'
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
