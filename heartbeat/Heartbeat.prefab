@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2992048200417750021}
   - component: {fileID: 7085234064379761500}
   - component: {fileID: 8007504355554975679}
+  - component: {fileID: 6210811883200232086}
   m_Layer: 0
   m_Name: Heartbeat
   m_TagString: Untagged
@@ -162,6 +163,27 @@ MonoBehaviour:
         fallbackBones: 
         keepBoneOffsets2: 0
         linkMode: 4
+--- !u!95 &6210811883200232086
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828323597021450782}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4e2ed97abd06b34ca8ee0d2d6236549, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3644947684464608601
 GameObject:
   m_ObjectHideFlags: 0
