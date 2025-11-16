@@ -1,2 +1,0 @@
-The prefab does not have an audio file. To have this be properly synced, you'll need a heartbeat sample that is 100bpm.
-I have found that the math for this would be a 1.2 second audio sample of a heartbeat with 0.6 seconds of a heartbeat and 0.6 seconds of a pause.

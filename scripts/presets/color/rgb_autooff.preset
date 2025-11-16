@@ -75,12 +75,12 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: managedReferences[4931133214165303355].controllers.Array.data[0].controller.id
-    value: 3e52811302ac35941be252b6664a724b|Assets/32294/heartrate_monitor/animations/color/PC/rgb_autooff.controller
+    value: 6243d8a7025e8704b8657dfe09982648|Assets/32294/heartrate_monitor/animations/color/PC/rgb_autooff.controller
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: managedReferences[4931133214165303355].controllers.Array.data[0].controller.objRef
     value: 
-    objectReference: {fileID: 9100000, guid: 3e52811302ac35941be252b6664a724b, type: 2}
+    objectReference: {fileID: 9100000, guid: 6243d8a7025e8704b8657dfe09982648, type: 2}
   - target: {fileID: 0}
     propertyPath: managedReferences[4931133214165303355].controllers.Array.data[0].type
     value: 5

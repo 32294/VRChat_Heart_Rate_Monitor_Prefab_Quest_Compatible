@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6788751381458970094}
   - component: {fileID: 9054478303125098301}
+  - component: {fileID: 3614259387636347743}
   - component: {fileID: 233038004439689980}
   m_Layer: 0
   m_Name: (ADD ME) Configure Monitor
@@ -50,14 +51,26 @@ MonoBehaviour:
   selectedStyle: 0
   selectedColor: 0
   selectedColorHUD: 0
-  selectedOutlinedTextColor: 0
-  selectedOutlinedTextColorQuest: 0
+  selectedTextColor: 0
+  selectedTextColorQuest: 0
+  selectedTextOutlineColor: 0
   autoTurnOff: 1
-  useSound: 0
   toggleOnOff: 0
   toggleAct: 0
-  toggleSound: 0
   toggleHUD: 0
+--- !u!114 &3614259387636347743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901060048382707300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ff292af56458b4ba2a5933615be347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleOnOff: 0
 --- !u!114 &233038004439689980
 MonoBehaviour:
   m_ObjectHideFlags: 0

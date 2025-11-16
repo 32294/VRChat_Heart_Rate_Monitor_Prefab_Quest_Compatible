@@ -427,7 +427,7 @@ Material:
     - _CubeMapUVMode: 1
     - _CubeMapWorldNormalsStrength: 1
     - _CubemapBlendType: 0
-    - _Cull: 0
+    - _Cull: 2
     - _CurvFix: 1
     - _CurvatureU: 0
     - _CurvatureV: 0

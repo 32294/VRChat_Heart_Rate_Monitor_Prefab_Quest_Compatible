@@ -87,7 +87,7 @@ Preset:
     objectReference: {fileID: 11400000, guid: 98e61eb3e5d209646843711c3921096d, type: 2}
   - target: {fileID: 0}
     propertyPath: managedReferences[4931133214165303358].menus.Array.data[0].prefix
-    value: 
+    value: HR Monitor
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: managedReferences[4931133214165303358].prms.Array.size

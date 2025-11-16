@@ -8,20 +8,20 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hrmon_outline_color_black_quest
-  m_Shader: {fileID: 4800000, guid: b1f7ecc80417c414b9d62ce541d5bcbf, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0b7113dea2069fc4e8943843eff19f70, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - BSSBLOOMFOGTYPE_HEIGHT
-  - VIGNETTE_MASKED
+  m_ValidKeywords:
   - _EMISSION
   - _ENABLE_GEOMETRIC_SPECULAR_AA
   - _GLOSSYREFLECTIONS_OFF
+  - _SPECULARHIGHLIGHTS_OFF
+  m_InvalidKeywords:
+  - BSSBLOOMFOGTYPE_HEIGHT
+  - VIGNETTE_MASKED
   - _LIGHTINGMODE_FLAT
   - _RIM2STYLE_POIYOMI
   - _RIMSTYLE_POIYOMI
-  - _SPECULARHIGHLIGHTS_OFF
   - _STOCHASTICMODE_DELIOT_HEITZ
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0

@@ -14,38 +14,49 @@ public class HeartRateMonitorSettingsEditor : Editor
         EditorGUILayout.LabelField("Basic Settings", EditorStyles.boldLabel);
         script.selectedPlatform = (HeartRateMonitorSettings.PlatformOption)EditorGUILayout.EnumPopup("Platform", script.selectedPlatform);
         script.selectedStyle = (HeartRateMonitorSettings.StyleOption)EditorGUILayout.EnumPopup("Style", script.selectedStyle);
-        if (script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.Quest && script.selectedStyle == HeartRateMonitorSettings.StyleOption.HUD) {
-        } else if (script.selectedStyle != HeartRateMonitorSettings.StyleOption.Heart && script.selectedStyle != HeartRateMonitorSettings.StyleOption.HUD) {
-            script.selectedColor = (HeartRateMonitorSettings.ColorOption)EditorGUILayout.EnumPopup("Color", script.selectedColor);
-        } else {
+        // show nothing if quest + hud/heart
+        if ((script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.Quest && script.selectedStyle == HeartRateMonitorSettings.StyleOption.HUD) || (script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.Quest && script.selectedStyle == HeartRateMonitorSettings.StyleOption.Heart)) {
+        // show text colors if text or outlined text
+        } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.Text || script.selectedStyle == HeartRateMonitorSettings.StyleOption.OutlinedText) {
+            // PC
+            if (script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.PC) {
+                script.selectedTextColor = (HeartRateMonitorSettings.TextColorOption)EditorGUILayout.EnumPopup("Color", script.selectedTextColor);
+            // Quest
+            } else {
+                if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.Text) {
+                    script.selectedTextColor = (HeartRateMonitorSettings.TextColorOption)EditorGUILayout.EnumPopup("Color", script.selectedTextColor);
+                } else {
+                    script.selectedTextColorQuest = (HeartRateMonitorSettings.TextColorOptionQuest)EditorGUILayout.EnumPopup("Color", script.selectedTextColorQuest);
+                }
+            }            
+        // show color options for hud/heart
+        } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.Heart || script.selectedStyle == HeartRateMonitorSettings.StyleOption.HUD) {
             script.selectedColorHUD = (HeartRateMonitorSettings.ColorOptionHUD)EditorGUILayout.EnumPopup("Color", script.selectedColorHUD);
+        // show default if nothing else
+        } else {
+            script.selectedColor = (HeartRateMonitorSettings.ColorOption)EditorGUILayout.EnumPopup("Color", script.selectedColor);
         }
+
+        //  set outline color field if outlined text selected and on PC
         if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.OutlinedText && script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.PC) {
-            script.selectedOutlinedTextColor = (HeartRateMonitorSettings.OutlinedTextColorOption)EditorGUILayout.EnumPopup("Outline Color", script.selectedOutlinedTextColor);
-        } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.OutlinedText && script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.Quest) {
-            script.selectedOutlinedTextColorQuest = (HeartRateMonitorSettings.OutlinedTextColorOptionQuest)EditorGUILayout.EnumPopup("Outline Color", script.selectedOutlinedTextColorQuest);
+            // PC
+            script.selectedTextOutlineColor = (HeartRateMonitorSettings.TextOutlineColorOption)EditorGUILayout.EnumPopup("Outline Color", script.selectedTextOutlineColor);
+        }
+
+        if (script.selectedStyle != HeartRateMonitorSettings.StyleOption.HUD) {
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Behavior", EditorStyles.boldLabel);
+            script.autoTurnOff = EditorGUILayout.Toggle("Automatically Turn Off at 0", script.autoTurnOff);
+        } else {
+            script.autoTurnOff = false;
         }
 
         EditorGUILayout.Space();
-        EditorGUILayout.LabelField("Behavior", EditorStyles.boldLabel);
-        script.autoTurnOff = EditorGUILayout.Toggle("Automatically Turn Off at 0", script.autoTurnOff);
-        // if (script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.PC && script.selectedStyle == HeartRateMonitorSettings.StyleOption.HUD) {
-        //     script.useSound = EditorGUILayout.Toggle("Heartbeat Sound", script.useSound);
-        // } else {
-        //     script.useSound = false;
-        // }
-
-        EditorGUILayout.Space();
-        EditorGUILayout.LabelField("Menu toggles (+1 synced bits for each one selected)", EditorStyles.boldLabel);
-        script.toggleOnOff = EditorGUILayout.Toggle("On/off", script.toggleOnOff);
-        script.toggleAct = EditorGUILayout.Toggle("Act Dead", script.toggleAct);
-        // if (script.useSound) {
-        //     script.toggleSound = EditorGUILayout.Toggle("Headbeat Sound Toggle", script.toggleSound);
-        // } else {
-        //     script.toggleSound = false;
-        // }
+        EditorGUILayout.LabelField("Menu toggles", EditorStyles.boldLabel);
+        script.toggleOnOff = EditorGUILayout.Toggle("On/off (+1 synced bits)", script.toggleOnOff);
+        script.toggleAct = EditorGUILayout.Toggle("Act Dead (+1 synced bits)", script.toggleAct);
         if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.HUD) {
-            script.toggleHUD = EditorGUILayout.Toggle("Hud (local, +0 bits)", script.toggleHUD);
+            script.toggleHUD = EditorGUILayout.Toggle("Hud (local, +0 synced bits)", script.toggleHUD);
         } else {
             script.toggleHUD = false;
         }
@@ -61,9 +72,13 @@ public class HeartRateMonitorSettingsEditor : Editor
             selectedPrefabName += script.selectedStyle;
 
             if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.OutlinedText && script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.PC) {
-                selectedPrefabName += "_" + script.selectedOutlinedTextColor;
+                selectedPrefabName += "_" + script.selectedTextOutlineColor;
             } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.OutlinedText && script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.Quest) {
-                selectedPrefabName += "_" + script.selectedOutlinedTextColorQuest;
+                if (script.selectedTextColorQuest == HeartRateMonitorSettings.TextColorOptionQuest.Black) {
+                    selectedPrefabName += "_White";
+                } else {
+                    selectedPrefabName += "_Black";
+                }
             }
 
             GameObject selectedPrefab = (GameObject)Resources.Load(selectedPrefabName);
@@ -90,13 +105,15 @@ public class HeartRateMonitorSettingsEditor : Editor
                 else { presetsToApply.Add(pcPresetPath + "number/number.preset"); }
                 
                 // add the on fx layer if it makes sense
-                if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.ScreenHeart || script.selectedStyle == HeartRateMonitorSettings.StyleOption.ScreenSquare) {
+                if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.ScreenHeart && script.selectedStyle == HeartRateMonitorSettings.StyleOption.ScreenSquare) {
                     if (script.autoTurnOff) { presetsToApply.Add(pcPresetPath + "on/on_autooff.preset"); }
                     else { presetsToApply.Add(pcPresetPath + "on/on.preset"); }
                 }
 
                 // add the color fx layer
-                if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.Heart) {
+                if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.OutlinedText && script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.Quest) {
+                } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.Heart && script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.Quest) {
+                } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.Heart) {
 
                     if (script.selectedColorHUD == HeartRateMonitorSettings.ColorOptionHUD.RGB) {
                         if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/heart_rgb_autooff.preset"); }
@@ -109,15 +126,29 @@ public class HeartRateMonitorSettingsEditor : Editor
                 } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.HUD) {
                     
                     if (script.selectedColorHUD == HeartRateMonitorSettings.ColorOptionHUD.RGB && script.selectedPlatform == HeartRateMonitorSettings.PlatformOption.PC) {
-                        if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/hud_rgb_autooff.preset"); }
-                        else { presetsToApply.Add(presetPath + "color/hud_rgb.preset"); }
+                        presetsToApply.Add(presetPath + "color/hud_rgb.preset");
                     } else {
-                        if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/hud_default_autooff.preset"); }
-                        else { presetsToApply.Add(presetPath + "color/hud_default.preset"); }
+                        presetsToApply.Add(presetPath + "color/hud_default.preset");
                     }
 
-                } else {
+                } else if (script.selectedStyle == HeartRateMonitorSettings.StyleOption.Text || script.selectedStyle == HeartRateMonitorSettings.StyleOption.OutlinedText) {
                     
+                    if (script.selectedTextColor == HeartRateMonitorSettings.TextColorOption.RGB) {
+                        if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/rgb_autooff.preset"); }
+                        else { presetsToApply.Add(presetPath + "color/rgb.preset"); }
+                    } else if (script.selectedTextColor == HeartRateMonitorSettings.TextColorOption.White) {
+                        if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/white_autooff.preset"); }
+                        else { presetsToApply.Add(presetPath + "color/white.preset"); }            
+                    } else if (script.selectedTextColor == HeartRateMonitorSettings.TextColorOption.Black) {
+                        if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/black.preset"); }
+                        else { presetsToApply.Add(presetPath + "color/black.preset"); }
+                    } else { 
+                        if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/default_autooff.preset"); }
+                        else { presetsToApply.Add(presetPath + "color/default.preset"); }
+                    }                    
+
+                } else {
+
                     if (script.selectedColor == HeartRateMonitorSettings.ColorOption.RGB) {
                         if (script.autoTurnOff) { presetsToApply.Add(presetPath + "color/rgb_autooff.preset"); }
                         else { presetsToApply.Add(presetPath + "color/rgb.preset"); }

@@ -10,15 +10,15 @@ public class HeartRateMonitorSettings : MonoBehaviour
     public StyleOption selectedStyle = StyleOption.ScreenHeart;
     public ColorOption selectedColor = ColorOption.Default;
     public ColorOptionHUD selectedColorHUD = ColorOptionHUD.Default;
-    public OutlinedTextColorOption selectedOutlinedTextColor = OutlinedTextColorOption.Black;
-    public OutlinedTextColorOptionQuest selectedOutlinedTextColorQuest = OutlinedTextColorOptionQuest.Black;
+    public TextColorOption selectedTextColor = TextColorOption.Default;
+    public TextColorOptionQuest selectedTextColorQuest = TextColorOptionQuest.White;
+    
+    public TextOutlineColorOption selectedTextOutlineColor = TextOutlineColorOption.White;
 
     public bool autoTurnOff = false;
-    public bool useSound = false;
 
     public bool toggleOnOff = false;
     public bool toggleAct = false;
-    public bool toggleSound = false;
     public bool toggleHUD = false;
 
     public enum PlatformOption
@@ -50,17 +50,25 @@ public class HeartRateMonitorSettings : MonoBehaviour
         RGB
     }
 
-    public enum OutlinedTextColorOption
+    public enum TextColorOption
     {
-        Black,
+        Default,
         White,
+        Black,
         RGB
     }
     
-    public enum OutlinedTextColorOptionQuest
+    public enum TextColorOptionQuest
     {
+        White,
+        Black
+    }
+
+    public enum TextOutlineColorOption
+    {
+        White,
         Black,
-        White
+        RGB
     }
 
 }
