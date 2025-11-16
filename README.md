@@ -23,6 +23,6 @@ This project was meant to be used with [this](https://github.com/RichardVirgosky
 
 # Thanks <3
 
-[Richard Virgosky](https://github.com/RichardVirgosky) - Create the OSC App
+[Richard Virgosky](https://github.com/RichardVirgosky) - Creating the OSC App
 
 [ManicQuinn](https://github.com/ManicQuinn) - Providing Sound Integration
